@@ -1,0 +1,46 @@
+<b-row v-if="carouselPhotos.length==5">
+    <div class="col d-flex justify-content-center">
+        <b-carousel
+            id="carousel"
+            v-model="slide"
+            :interval="4000"
+            indicators
+            controls
+            background="#fff"
+            img-width="1024"
+            img-height="480"
+            style="text-shadow: 1px 1px 2px #333;"
+        >
+            <!-- Text slides with image -->
+            <div
+                
+                style="max-width:600px;max-height:600px;align-items:center"
+            >
+                <b-carousel-slide :img-src="carouselPhotos[0].link"></b-carousel-slide>
+                <b-carousel-slide :img-src="carouselPhotos[1].link"></b-carousel-slide>
+                <b-carousel-slide :img-src="carouselPhotos[2].link"></b-carousel-slide>
+                <b-carousel-slide :img-src="carouselPhotos[3].link"></b-carousel-slide>
+                <b-carousel-slide :img-src="carouselPhotos[4].link"></b-carousel-slide>
+            </div>
+        </b-carousel>
+        </div>
+    </b-row>
+    <div class="row row-cols-4" style='position:absolute;top:540px;overflow-y:scroll'></div>
+
+    <div
+            id="note"
+        >Gallery is currently only available on laptops/desktops. If you are on your laptop/desktop, increase the width of your browser window.</div>
+        @media only screen and (max-width:1000px) {
+            #note {
+                display:block;
+                text-align: center;
+            }
+            #photoView {
+                display:none
+            }
+        }
+        @media only screen and (min-width:1000px) {
+            #note {
+            display:none
+            }
+        }

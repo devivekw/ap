@@ -1,0 +1,305 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+$green: #86BB71;
+$blue: #94C2ED;
+$orange: #E38968;
+$gray: #92959E;
+
+#chat-app, #chat-app:before, #chat-app:after {
+  box-sizing: border-box;
+}
+@media only screen and (min-width:800px) {
+  #noteChat {
+  display:none
+  }
+  #chat-app {
+    font: 14px/20px "Lato", Arial, sans-serif;
+    padding: 0px 0px;
+    color: white;
+  }
+}
+
+
+@media only screen and (max-width:800px),(max-height:500px) {
+  #chat-app {
+    display:none;
+  }
+  #noteChat {
+    display:block;
+    text-align: center;
+    color:black
+  }
+}
+
+/* Position the Popup form */
+.login-popup {
+    display:none;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+/* Hide the Popup form */
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top:22%;
+    transform: translate(-50%,10%);
+    z-index: 9;
+}
+/* Styles for the form container */
+.form-container {
+    color:black;
+    border-radius: 5px;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+}
+/* Full-width for input fields */
+.form-container input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+}
+.form-container h2 {
+  font-size:25px;
+  margin-bottom:16px;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Style submit/login button */
+.form-container .btn {
+    border-radius: 5px;
+    background-color: #8ebf42;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+/* Style cancel button */
+.form-container #btn-cancel {
+    background-color: #cc0000;
+}
+/* Hover effects for buttons */
+.form-container .btn:hover {
+    opacity:1;
+    color: white;
+}
+
+#chat-interface {
+  margin: auto auto;
+  width: 750px;
+  background: #4c505e;
+  display:flex;
+  border-radius: 5px;
+  flex-direction: row;
+
+  #chatwbtn {
+
+    width:260px;
+    height:704px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+
+    background: rgb(135, 135, 135);
+    #compose {
+        height:20px;
+        max-height:20px;
+        margin: 5px 5px 5px 220px;
+        padding-top:0px
+    }
+    #chats {
+    background: #444753;
+    width: 260px;
+    height:674px;
+    border-bottom-left-radius: 5px;
+
+    overflow-y:scroll;
+    float:left;
+
+
+  .chat-container {
+    cursor:pointer;
+    display:flex;
+    flex-direction:row;
+    transition-duration:0.4s;
+    color:white;
+    padding: 10px 20px 10px 20px;
+
+    
+    img {
+        float:left;
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+    }
+    .chat-content {
+        float: left;
+        padding-left:10px
+    }
+    .chat-content.unread {
+        font-weight:bold;
+    }
+  }
+  .chat-container:hover {
+    background-color: rgb(91, 83, 83);
+}
+}
+}
+}
+
+#header-pic {
+    border-radius:50%;
+    width:40px;
+    height:40px;
+}
+
+
+
+
+#messages {
+    display:none;
+    flex-direction: column;
+    width: 490px;
+    float:left;
+    background: #F2F5F8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    color: #434651;
+
+
+#message-header {
+    padding:9px 20px;
+    border-bottom: 2px solid white;
+    
+    img {
+      float: left;
+    }
+    #header-name {
+        float:left;
+        padding-left:10px;
+        margin-top:10px;
+        font-weight:bold;
+    }
+}
+
+}
+#message-list {
+   padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 500px;
+    display:flex;
+    flex-direction: column-reverse;
+
+    .message-data {
+        margin-top:12px;
+        margin-bottom: 15px;
+        display:flex;
+        flex-direction: row-reverse;
+        margin-right: 347px;
+    }
+    .message-data.float-right {
+        flex-direction:row;
+        margin-right:11px;
+        .time {
+            margin-right: 6px;
+        }
+    }
+
+    .time {
+        cursor:pointer;
+        color: lighten($gray, 8%);
+        padding-left: 6px;
+        margin-top:5px
+    }
+    
+    img {
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+    }
+    .message {      
+        color: white;
+        padding: 12px 20px;
+        line-height: 26px;
+        font-size: 16px;
+        border-radius: 7px;
+        margin-bottom: 0px;
+        width: 90%;
+        position: relative;
+        
+        &:after {
+          bottom: 100%;
+          left: 7%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-bottom-color: $green;
+          border-width: 10px;
+          margin-left: -10px;
+        }
+      }
+      .other-message {
+        background: $green;
+      }
+      
+      .my-message {
+        background: $blue;
+        
+        &:after {
+          border-bottom-color: $blue;
+          left: 93%;
+        }
+      }  
+}
+  
+  .float-right {
+    float: right;
+  }
+
+  #message-input {
+    padding: 20px 30px;
+    
+    textarea {
+      width: 100%;
+      border: none;
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+      
+    }
+    button {
+        float: right;
+        color: $blue;
+        font-size: 16px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        background: #F2F5F8;
+        
+        &:hover {
+          color: darken($blue, 7%);
+        }
+      }
+  }
+
+
+  

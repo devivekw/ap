@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4 style="padding-left:5px">
+                Welcome,
+                <br />
+                {{ userProfile.name }}.
+            </h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <b-card style="padding:0px">
+                <h5>Classrooms</h5>
+                <hr />
+                <ul v-if="!noclass">
+                    <li v-for="classroom in userProfile.classes" v-bind:key="classroom">
+                        <b-link @click="route(classroom)">{{ classroom }}</b-link>
+                    </li>
+                </ul>
+                <div v-else>You are not part of any classes.</div>
+            </b-card>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <b-card>
+                <h5>Notifications</h5>
+                <hr>
+                <ul v-if='notif'>
+                    <li v-if='dueCount'>You have {{ dueCount }} assignments due. </li>
+                    <li v-if='newRepCount'>You have {{ newRepCount }} unread reports. </li>
+                    <li v-if='msgCount'>You have unread messages from {{ msgCount }} chats. </li>
+                </ul>
+                <div v-else>No new notifications.</div>
+            </b-card>
+        </div>
+        <div class="col">
+            <b-card>
+                <h5>Announcements</h5>
+                <hr>
+                <ul v-if='announcements.length'>
+                </ul>
+                <div v-else>No new announcements.</div>
+            </b-card>
+        </div>
+    </div>
+</div>
